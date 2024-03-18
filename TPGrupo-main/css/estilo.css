@@ -1,0 +1,245 @@
+*{
+    padding: 0;
+    margin: 0 ;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: var(--color1);
+}
+
+.grid-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "header "
+                         " main"
+                         "footer";
+    
+}
+
+#header{
+    grid-area: header;
+}
+
+#footer{
+    grid-area: footer;
+}
+
+.animacion{
+    grid-area: animacion;
+    margin-left: 10%;
+    display: none;
+    width: 80%;
+    justify-content: center ;
+}
+
+.slider-box{
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider-box ul{
+    display: flex;
+    margin-top: 0;
+    width: 500%;
+    animation: slide 15s infinite alternate ease-in-out;
+}
+
+.slider-box li{
+    padding: 0;
+    margin-top: 0;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+}
+
+.slider-box img{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-position: center center;
+    object-fit: cover; 
+}
+
+@keyframes slide{
+    0% {margin-left: 0;}
+    15% {margin-left: 0;}
+
+    20%{margin-left: -100%;}
+    35%{margin-left: -100%;}
+
+    40%{margin-left: -200%;}
+    55%{margin-left: -200%;}
+
+    60%{margin-left: -300%;}
+    75%{margin-left: -300%;}
+
+    80%{margin-left: -300%;}
+    95%{margin-left: -300%;}
+}
+
+.generos{
+    grid-area: generos;
+    margin-top: 15px;
+    padding: 0;
+    display: none;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 100%;
+    height: 500px;
+    overflow-y: scroll;
+    /* background-color: rgb(122, 83, 10); */
+}
+.generos::-webkit-scrollbar{
+    background-color: var(--color6);
+    border-radius: 10px;
+    /*background-color: blue*/
+}
+
+.generos ul{
+    padding: 0;
+    width: 100%;
+    background-color: var(--color1);
+}
+.generos ul li{
+    margin: 10px;
+    /**/
+}
+
+.generos ul li a{
+    color: white;
+    font-size: 15px;
+}
+.generos li:nth-child(1n){
+    border-radius: 15px;
+    background-color: var(--color4);
+}
+
+.main{
+    grid-area: main;
+    margin-top: 15px;
+}
+
+.contenido{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 0.5rem rgba(82, 41, 3, 0.9);
+    margin-top: 100px;
+    align-items: center;
+}
+
+.contenido h2{
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.contenedor{
+    
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.lugar{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 50%;
+    flex-direction: column;
+    /*border: 2px solid red;*/
+}
+
+.lugar a{
+    width: 80%;
+    font-size: 15px;
+    color:white;
+}
+
+.lugar img{
+    margin-top: 10px;
+    padding: 0;
+    width: 80%;
+    height: 80%;
+    border-radius: 15px;
+}
+
+
+
+@media only screen and (min-width:460px) {
+    .grid-container {
+        grid-template-columns: 30% 70% ;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: "header header "
+                             "animacion animacion "
+                            " generos main "
+                             "footer footer " ;
+
+    }
+
+    #header{
+        grid-area: header;
+
+    }
+
+    #footer{
+        grid-area: footer;
+
+    }
+
+    .generos{
+        display: flex;
+    }
+
+    .animacion{
+        display: flex;
+    }
+    .contenido{
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (min-width:900px){
+
+    .grid-container{
+        grid-template-columns: 10% 15% 65% 10% ;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: "header header header header"
+                             ". animacion animacion ."
+                             ". generos main ."
+                            "footer footer footer footer" ;
+    }
+
+    #header{
+        grid-area: header;
+    }
+
+    #footer{
+        grid-area: footer;
+    }
+    .generos{
+        display: flex;
+    }
+
+    .animacion{
+        display: flex;
+
+    }
+    .lugar{
+        width: 20%;
+    }
+
+    .lugar img{
+        width: 100%;
+    }
+}

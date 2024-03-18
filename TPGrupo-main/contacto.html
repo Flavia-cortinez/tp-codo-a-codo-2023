@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/root.css">
+    <link rel="stylesheet" href="css/header-footer.css">
+    <link rel="stylesheet" href="css/estilo-form.css">
+
+    <title>Contacto</title>
+</head>
+
+<body>
+
+    <!-- ACA VA COPIA DE HEADER -->
+    <header class="topheader" id="header">
+
+    </header>
+    <!-- FIN DE COPIA HEADER -->
+
+    <main>
+
+        <form action="" method="post" id="form-consultas">
+            <div class="form">
+                <h1>Contacto:</h1>
+                <div class="grupo-form">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                </div>
+
+                <div class="grupo-form">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" name="apellido" id="apellido" placeholder="Apellido" required>
+                </div>
+
+                <div class="grupo-form">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="Correo@email.com" required>
+                </div>
+
+                <div class="check">
+                    <div class="edad-container">
+                        <input type="radio" id="menor" name="edad" value="menor" required>
+                        <label for="menor">Soy menor de 18 años.</label>
+                    </div>
+
+                    <div class="check">
+                        <input type="radio" id="mayor" name="edad" value="mayor">
+                        <label for="mayor">Soy mayor de 18 años.</label><br><br>
+                    </div>
+                </div>
+
+                <div class="grupo-form">
+                    <label for="motivo">Motivo:</label>
+                    <select class="grupo-genero" name="" id="motivo">
+                        <option value="1">Solicitud</option>
+                        <option value="2">Sugerencia</option>
+                        <option value="3">Reclamo</option>
+                        <option value="4">Otros</option>
+                    </select>
+                </div>
+
+                <div class="grupo-form">
+                    <label for="consulta">Escribanos su consulta:</label>
+                    <textarea id="consulta" name="consulta" cols="30" rows="10"
+                        placeholder="Escriba aquí su consulta..." required></textarea>
+                </div>
+
+                <div class="grupo-form">
+                    <button class="boton-registro" type="button" onclick="mostrarMensaje()">Enviar</button>
+                </div>
+
+                <div><br>
+                    <p style="color: #d88c00;">* Campos obligatorios</p>
+                </div>
+
+            </div>
+        </form>
+
+        <div id="mensGracias" class="mensGracias" style="display: none;">
+            <h2>Mensaje enviado!</h2><br>
+            <p>Gracias por tu consulta. <br>
+                Te responderemos a la brevedad.
+            </p>
+        </div>
+
+        <aside></aside>
+
+    </main>
+
+    <!-- ACA VA COPIA DE FOOTER -->
+    <footer id="footer">
+
+    </footer>
+    <!-- FIN COPIA FOOTER -->
+
+    <script src="js/contacto.js"></script>
+    <script src="JS/header-footer.js"></script>
+</body>
+
+</html>

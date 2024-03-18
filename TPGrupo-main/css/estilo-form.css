@@ -1,0 +1,177 @@
+/* ESTILOS REGISTRO */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+main {
+    
+    background-color: var(--color1);
+    color: var(--color3);
+    width: 100%;
+    display: flex;
+    /*flex-direction: column;
+    /* height: 650px; */
+    justify-content: center;
+    /* align-items: center; */
+    /* align-content: center; */
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; */
+    /* margin: 20px 20px; */
+    border: 2px solid var(--color1);
+    /* background-color: #6d2828; */
+}
+
+h1 {
+    text-align: center;
+    font-weight: 700;
+    color: #d88c00;
+    text-shadow: 5px 5px 5px 5px black;
+}
+
+form {
+    background-color: rgb(35, 35, 35);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(236, 233, 233, 0.61);
+    /* box-shadow: 0 0 6px 0 rgba(255, 255, 255, 0.8); */
+    /* display: grid; */
+    /* align-content: space-between; */
+    width: 400px;
+}
+
+.form {
+    width: 100%;
+    margin: auto;
+}
+
+form .grupo-form {
+    position: relative;
+    margin: 10px;
+}
+
+input {
+    background-color: white;
+    font-size: 16px;
+    padding: 5px 5px 5px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    margin: 5px 0px 15px 0px;
+}
+
+input:focus:hover {
+    outline: none;
+    color: black;
+    background-color: #d88c00;
+}
+
+label {
+    font-size: 16px;
+
+}
+
+.grupo-genero,
+textarea,
+select,
+button {
+    background-color: white;
+    font-size: 16px;
+    padding: 5px 5px 5px 5px;
+    margin: 5px 0px 0px 0px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+}
+
+.check {
+    /* display: inline-block; */
+    /* vertical-align: middle; */
+    text-align: center;
+}
+
+.boton-registro {
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    /* cursor: pointer; */
+    width: 100%;
+    /* transition: transform 0.3s; */
+    background-color: #d88c00;
+    font-size: 16px;
+    margin: 20px 0px 0px 0px;
+}
+
+.boton-registro:hover {
+    transform: scale(1.05);
+    font-size: large;
+}
+
+.grupo-form label::before {
+    content: "* ";
+    color: #d88c00;
+}
+
+/* @media (max-width: 768px) {
+    .form {
+        flex-direction: column;
+    } */
+
+.warning {
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    color: #d88c00;
+    /* padding-top: 20px; */
+}
+
+.respuesta {
+    margin: 30px 0px;
+    text-align: center;
+    color: wh;
+}
+
+.datos-error {
+    text-align: center;
+}
+
+
+/* ESTILOS CONTACTO */
+
+.mensGracias {
+    margin: 20px;
+    text-align: center;
+    color: #d88c00;
+    background-color: rgb(35, 35, 35);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(236, 233, 233, 0.61);
+}
+
+/* ESTILOS DE TERMINOS */
+
+.terminos-caja{
+    background-color: black;
+    margin: 20px;
+    padding: 20px;
+    color: rgb(214, 211, 211);
+}
+
+#tarjetaregistro,
+#form-consultas{
+    margin-top: 40px;
+    margin-bottom: 30px;
+    
+}
+
+/*#form-consultas{
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+

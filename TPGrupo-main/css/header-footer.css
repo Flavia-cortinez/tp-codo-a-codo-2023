@@ -1,0 +1,205 @@
+
+/*header inicio*/
+.topheader {
+    box-shadow: 0 4px 5px var(--color2); /*sombreado*/
+    position: fixed;/*MOSTRAR SIEMPRE, INCLUSO AL SCROLLEAR*/
+    background-color: var(--color3);
+    left: 0;
+    top: 0;
+    width: 100%;/*OCUPE TODO EL ANCHO DISPONIBLE*/
+    opacity: 1;
+    z-index: 1;  
+}
+
+/* BARRA DE NAVEGAC SUPERIOR ---------------------------------*/
+.topnav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/*MENU---------------------------------------------------------*/
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.menu li {
+    padding: 0 15px;
+}
+.menu a {
+    color: var(--color5);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 50px;
+    text-transform: uppercase;   /*transformar en mayusculas*/
+    position: relative;   /*posicion relativa respecto a la barra resaltadora*/
+}
+.menu a::after {     /*barra resalta palabras*/
+    content: "";
+    background-color: var(--color6);
+    position: absolute;   /*posicion absoluta respecto del menu*/
+    left: 0;
+    top: calc(100% + 4px);
+    width: 100%;
+    height: 4px;
+    opacity: 0;
+    transition: opacity 0.5s;   /*retardo en aparecer*/
+}
+.menu a.selected::after,
+.menu a:hover::after {
+    opacity: 0.8;
+}
+.menu a:hover {    /*al pasar el mouse cambia de color el menu*/
+    color: var(--color6);
+}
+.open-menu,    /*el icono solo aparece en disp pequeños*/
+.close-menu {    /*entonces lo ocultamos acá con display:none*/
+    display: none;
+    font-size: 50px;
+    color: black;
+    /* margin-right: 0; */
+}
+.logotype {
+    display: flex;
+    justify-content: center;
+}
+
+/* BUSCADOR------------------------------------ */
+.buscador input {
+    border-radius: 5px;
+    border: 0.2em solid var(--color5);
+    box-shadow: 2px 2px var(--color4);
+    height: 30px;
+    padding: 0.25em 0.5em;
+    margin: 10px 10px;
+}
+
+/* MEDIA QUERY PARA DISPOSITIVOS PEQUEÑOS -------------------*/
+@media (max-width: 900px) { 
+/*MENU*/
+.menu {
+    flex-direction: column;    /*cambia el display flex de filas a columnas*/
+    position: fixed;   /*desacoplar menu de barra sup y acoplarlo al viewport, dejarlo fijo*/
+    left: 0;
+    top: 0;
+    width: 100%;  /*que ocupe todo el ancho del viewport*/
+    align-items: center;   /*alinear al centro horizontalmente*/
+    background-color: var(--color1);
+    color: var(--color6);
+    height: 100%;   /*que ocupe todo el alto del viewport*/
+    overflow-y: auto;  /*coloca un scroll en caso de q no sea vea todo el menu*/
+
+    opacity: 0;/*menu invisible,transparente*/
+    pointer-events: none;/*menú no clickeable*/
+
+    transition: opacity 0.3s;  /*transicion de apertura/cierre de menu en disp moviles*/
+}
+.menu li {
+    padding: 0;
+}
+.menu a {
+    color: var(--color5);
+    line-height: 150px;
+    text-transform: uppercase;
+    font-size: 25px;
+}
+.open-menu,
+.close-menu {
+    display: block;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-right: 0%;
+    font-size: 30px;
+}
+
+.close-menu {
+    align-self: flex-end;/*CDO LOS DEMAS ITEMS ESTAN ALINEADOS, Y ESTE LO QUEREMOS DIFERENTE*/
+    padding: 2px 16px;
+    font-size: 70px;
+    color: var(--color3);
+}
+
+/*en disp moviles fijamos que el menu no sea vea cdo esta cerrado (opacity:0)*/
+/*con el menu abierto, mostrar (opacity:1) y permitir clicks*/
+.menu_opened {
+    opacity: 1;
+    pointer-events: all;
+}
+.menu a::after {
+    content: none;
+}
+.menu a.selected::after,
+.menu a:hover::after {
+    opacity: 1;
+}
+.menu a:hover,
+.menu a.selected {
+    color: var(--color3);
+}
+
+}
+/*header final*/
+
+/*footer inicio*/
+
+
+.cont-no-resp{
+    background-color: var(--color4);
+    padding: 25px;
+    display: grid;
+    grid-template-columns: minmax(100px, 400px) 1fr;
+    
+}
+.cont-red h3{
+    color: var(--color3);
+}
+.cont-enl h3{
+    color: var(--color3);
+}
+.li-enl li{
+    list-style: none;
+}
+.li-red li{
+    list-style: none;
+}
+.li-enl li a{
+    text-decoration: none;
+    color: var(--color3);
+}
+.li-red li a{
+    text-decoration: none;
+    color: var(--color3);
+}
+.derechos-reservados{
+    grid-column: 1 / 3;
+    text-align: center;
+    color: var(--color5);
+    padding-top: 10px;
+}
+.cont-resp{
+    display: none;
+}
+@media only screen and (max-width: 600px){
+    .cont-no-resp{
+        display: none;
+    }
+    .cont-resp{
+        background-color: var(--color4);
+        display: flex;
+        flex-direction: column;
+        padding: 25px;
+    }
+    details{
+        color: var(--color3);
+        margin-top: 15px;
+        padding: 5px;
+        border-top: 1px solid var(--color4);
+        border-radius: 9%;
+    }
+}
+/*footer final*/

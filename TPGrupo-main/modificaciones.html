@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar película</title>
+    <link rel="stylesheet" href="./CSS/root.css">
+    <link rel="stylesheet" href="css/estilos-menu.css">
+    <link rel="stylesheet" href="css/header-footer.css">
+
+</head>
+
+<body>
+    <header class="topheader" id="header">
+    </header>
+    <h1 class="altura">Modificar películas del catálogo</h1>
+    <h3>TP Grupo 2023</h3>
+    <div id="app">
+        <form @submit.prevent="obtenerPelicula" >
+
+            <label for="codigo">Código:</label>
+
+            <input type="text" v-model="codigo" required><br>
+            <div class="contenedor-centrado" >
+                <button type="submit">Modificar película</button>
+                <a href="menu.html">Menu principal</a>
+            </div>
+
+        </form>
+
+        <div v-if="mostrarDatosPelicula">
+            <h2>Datos de la película</h2>
+            <form @submit.prevent="guardarCambios">
+                <label for="tituloModificar">Descripción:</label>
+                <input type="text" id="tituloModificar" v-model="titulo">
+                <br>
+
+                <label for="duracionModificar">Duración:</label>
+                <input type="number" id="duracionModificar" v-model="duracion">
+                <br>
+
+                <label for="anioModificar">Año:</label>
+                <input type="number" id="anioModificar" v-model="anio">
+                <br>
+
+                <!-- Imagen actual de la película -->
+                <img v-if="imagen_url && !imagenSeleccionada" :src="'https://www.pythonanywhere.com/user/dumdev89/files/home/dumdev89/mysite/static/img/' + imagen_url" alt="Imagen de la película" style="max-width: 200px;">
+
+                <!-- Vista previa de la nueva imagen seleccionada -->
+                <img v-if="imagenSeleccionada" :src="imagenUrlTemp" alt="Vista previa de la nueva imagen" style="max-width: 200px;">
+
+                <!-- Input para nueva imagen -->
+                <label for="nuevaImagen">Nueva Imagen:</label>
+                <input type="file" id="nuevaImagen" @change="seleccionarImagen">
+                <br>
+
+                <label for="direModificar">director:</label>
+                <input type="text" id="direModificar" v-model="director">
+                <br>
+
+                <button type="submit">Guardar Cambios</button>
+                <a href="modificaciones.html">Cancelar</a>
+            </form>
+        </div>
+    </div >
+    <footer id="footer">
+    </footer>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="js/modificaciones.js"></script>
+    <script src="JS/header-footer.js"></script>
+
+</body>
+</html>

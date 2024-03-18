@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Agregar pelicula</title>
+        <link rel="stylesheet" href="./CSS/root.css">
+        <link rel="stylesheet" href="css/estilos-menu.css">
+        <link rel="stylesheet" href="css/header-footer.css">
+    </head>
+    <body>
+        <header class="topheader" id="header">
+        </header>
+
+        <h1 class="altura">Agregar películas al catálogo</h1>
+        <h3>TP Grupo 2023</h3>
+
+<!--enctype="multipart/form-data" es necesario para enviar archivos al back.-->
+        <form id="formulario" enctype="multipart/form-data" >
+            <label for="codigo">Código:</label>
+            <input type="text" id="codigo" name="codigo" required>
+            <br>
+
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" name="titulo" required>
+            <br>
+
+            <label for="duracion">Duración:</label>
+            <input type="number" id="duracion" name="duracion" required>
+            <br>
+
+            <label for="anio">Año:</label>
+            <input type="number" step="0.1" id="anio" name="anio" required>
+            <br>
+
+            <label for="imagenPelicula">Imagen de la película:</label>
+            <input type="file" id="imagenPelicula" name="imagen">
+            <br>
+
+            <label for="directorPelicula">Director:</label>
+            <input type="text" id="directorPelicula" name="director">
+            <br>
+
+            <div class="contenedor-centrado">
+            <button type="submit">Agregar película</button>
+            
+                <a href="menu.html">Menu principal</a>
+            </div>
+        </form>
+
+              <!-- INICIO FOOTER --------------------------------->
+        <footer id="footer">
+        </footer>
+        <script src="JS/header-footer.js"></script>
+        <script src="js/altas.js"></script>
+    </body>
+    </html>

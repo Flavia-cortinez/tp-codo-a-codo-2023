@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de películas</title>
+    <link rel="stylesheet" href="./CSS/root.css">
+    <link rel="stylesheet" href="css/estilos-menu.css">
+    <link rel="stylesheet" href="css/header-footer.css">
+</head>
+
+<body>
+    <header class="topheader" id="header">
+    </header>
+    <h1 class="altura">Baja de Películas</h1>
+    <h3>TP Grupo 2023</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Descripción</th>
+                <th>Duración</th>
+                <th align="right">Año</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr v-for="pelicula in peliculas">
+                <td>{{ pelicula.codigo }}</td>
+                <td>{{ pelicula.titulo }}</td>
+                <td>{{ pelicula.duracion }}</td>
+                <td align="right">{{ pelicula.anio }}</td>
+                <td>
+                    <button type="submit" @click="eliminarPelicula(pelicula.codigo)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="contenedor-centrado">
+        <a href="menu.html">Menu principal</a>
+    </div>
+
+    <footer class="unico" id="footer">
+    </footer>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="js/listadoEliminar.js"></script>
+    <script src="js/header-footer.js"></script>
+</body>
+
+</html>

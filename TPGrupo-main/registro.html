@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/root.css">
+    <link rel="stylesheet" href="css/estilo-form.css">
+    <link rel="stylesheet" href="css/header-footer.css">
+    <title>Registro</title>
+</head>
+
+<body>
+
+    <!-- DESDE ACA COPIA HEADER -->
+    <header class="topheader" id="header">
+    </header>
+    <!-- HASTA ACA COPIA HEADER -->
+
+    <main>
+        <form id="tarjetaregistro">
+            <div class="form">
+                <h1>Registro</h1>
+
+                <div class="grupo-form">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                </div>
+
+                <div class="grupo-form">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="apellido" id="apellido" placeholder="Apellido" required>
+                </div>
+
+                <div class="grupo-form">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Correo@email.com" required>
+                </div>
+
+                <div class="grupo-form">
+                    <label for="fechanac">Fecha de nacimiento</label>
+                    <input type="date" name="fechanac" id="fechanac" required>
+                </div>
+
+                <div class="grupo-form">
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+
+                <div class="grupo-form">
+                    <label for="genero">Géneros de su interés</label>
+                    <select class="grupo-genero" name="genero" id="genero" required>
+                        <option value="1">Todos</option>
+                        <option value="2">Acción</option>
+                        <option value="3">Animación</option>
+                        <option value="4">Comedia</option>
+                        <option value="5">Documental</option>
+                        <option value="6">Familia</option>
+                        <option value="7">Fantasía</option>
+                        <option value="8">Historia</option>
+                        <option value="9">Infantil</option>
+                        <option value="10">Música</option>
+                        <option value="11">Romance</option>
+                    </select>
+                </div>
+
+                <div>
+                    <div class="check">
+                        <input type="checkbox" name="novedades" id="novedades" checked required>
+                        <label for="novedades">Deseo recibir novedades por email.</label>
+                    </div>
+
+                    <div class="check">
+                        <input type="checkbox" name="terminos" id="terminos" required>
+                        <label for="terminos">Acepto los términos y condiciones.</label>
+                    </div>
+                </div>
+
+                <div class="grupo-form">
+                    <button class="boton-registro" type="submit" id="registrarse">Registrarse</button>
+                </div>
+
+                <div><br>
+                    <p style="color: #d88c00;">* Campos obligatorios</p>
+                    <a href="Terminos.html" >terminos y condiciones</a>
+                </div>
+            </div>
+        </form>
+
+                    <h3 id="respuesta" class="respuesta" style="color: #d88c00;"></h3>
+
+        <div id="datos-error"></div>
+
+        <aside></aside>
+
+    </main>
+
+    <!-- DESDE ACA COPIA FOOTER -->
+    <footer id="footer">
+    </footer>
+    <!-- HASTA ACA COPIA FOOTER  -->
+
+    <script src="js/registro.js"></script>
+    <script src="js/header-footer.js"></script>
+</body>
+
+</html>
